@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongsBackup", "SongsBackup\SongsBackup.csproj", "{331A89AC-E5D3-4671-948A-474FD89F5EDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C22B50B7-E356-4C6B-9A57-E8C445E0D89A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongBackupTests", "SongBackupTests\SongBackupTests.csproj", "{78362C0C-647E-4E20-A970-27856D97411F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{331A89AC-E5D3-4671-948A-474FD89F5EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331A89AC-E5D3-4671-948A-474FD89F5EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331A89AC-E5D3-4671-948A-474FD89F5EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331A89AC-E5D3-4671-948A-474FD89F5EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78362C0C-647E-4E20-A970-27856D97411F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78362C0C-647E-4E20-A970-27856D97411F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78362C0C-647E-4E20-A970-27856D97411F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78362C0C-647E-4E20-A970-27856D97411F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78362C0C-647E-4E20-A970-27856D97411F} = {C22B50B7-E356-4C6B-9A57-E8C445E0D89A}
+	EndGlobalSection
+EndGlobal

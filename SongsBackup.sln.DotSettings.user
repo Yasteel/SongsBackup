@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d2144554_002D7455_002D4440_002D8e82_002Db5d28a168335/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Read_Files_Should_Succeed_Given_Files_Exist_In_Directory" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::78362C0C-647E-4E20-A970-27856D97411F::net8.0::SongBackupTests.UnitTest1.Read_Files_Should_Succeed_Given_Files_Exist_In_Directory&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
