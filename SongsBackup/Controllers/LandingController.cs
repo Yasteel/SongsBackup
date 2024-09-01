@@ -1,4 +1,6 @@
-﻿namespace SongsBackup.Controllers
+﻿using SongsBackup.Interfaces;
+
+namespace SongsBackup.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
 
@@ -7,21 +9,22 @@
 
     public class LandingController : Controller
     {
-        // GET
-        public IActionResult Index()
-        {
-            return this.View();
-        }
+        private readonly ISpotifyService spotifyService;
 
-        [HttpGet]
+        public LandingController(ISpotifyService spotifyService)
+        {
+            this.spotifyService = spotifyService;
+        }
+        
+        public async Task<IActionResult> Index(HomeViewModel? viewModel)
+        {
+            var profile = await this.spotifyService.GetProfile();
+            return this.View(this.BuildViewModel(profile));
+        }
+        
         public IActionResult Connect()
         {
             return this.RedirectToAction("Login", "Auth");
-        }
-
-        public IActionResult AfterConnect()
-        {
-            
         }
         
         private HomeViewModel BuildViewModel(ProfileResponse? profile)

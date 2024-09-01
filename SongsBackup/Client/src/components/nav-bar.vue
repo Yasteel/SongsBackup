@@ -20,7 +20,8 @@
 <style scoped>
   .navbar{
     width: 100%;
-    padding: 1rem 2rem;
+    height: 4rem;
+    padding: 0rem 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

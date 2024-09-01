@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http.Features;
+
 namespace SongsBackup
 {
     using SongsBackup.Interfaces;
@@ -15,7 +17,14 @@ namespace SongsBackup
             builder.Services.AddScoped<IFileService, FileService>();
             builder.Services.AddScoped<ISpotifyService, SpotifyService>();
             builder.Services.AddScoped<ISessionService, SessionService>();
+            builder.Services.AddScoped<IBlobService, BlobService>();
             builder.Services.AddHttpContextAccessor();
+            
+            // allows for multipart form data with a limit of 100MB
+            // builder.Services.Configure<FormOptions>(options =>
+            // {
+            //     options.MultipartBodyLengthLimit = 104857600;
+            // });
             
             builder.Services.AddHttpClient("SpotifyClient", client =>
             {
@@ -67,7 +76,7 @@ namespace SongsBackup
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Landing}/{action=Index}/{id?}");
+                pattern: "{controller=Landing}/{action=Connect}/{id?}");
 
             app.Run();
         }

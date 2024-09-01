@@ -53,3 +53,11 @@ C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0
 C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\obj\Debug\net8.0\SongsBackup.sourcelink.json
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Azure.Storage.Common.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\System.IO.Hashing.dll
+C:\Users\yasteelg\source\repos\Personal\SongsBackup\SongsBackup\bin\Debug\net8.0\System.Memory.Data.dll

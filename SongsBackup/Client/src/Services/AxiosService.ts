@@ -1,12 +1,12 @@
-﻿import axios, {AxiosInstance, AxiosResponse} from "axios";
+﻿import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 class AxiosService{
     
     private apiClient: AxiosInstance;
     
-    constructor(baseUrl: string) {
+    constructor() {
         this.apiClient = axios.create({
-            baseURL: baseUrl,
+            baseURL: "https://localhost:44372",
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -15,6 +15,10 @@ class AxiosService{
     
     public async getSomething(endpoint: string): Promise<AxiosResponse<any>>{
         return await this.apiClient.get(endpoint);
+    }
+    
+    public async Post(endpoint: string, data?: object): Promise<AxiosResponse<any>> {
+        return await this.apiClient.post(endpoint, data ?? {});
     }
 
 

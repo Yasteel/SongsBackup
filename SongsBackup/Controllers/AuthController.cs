@@ -1,16 +1,14 @@
-﻿using System.Globalization;
-using Newtonsoft.Json;
-using SongsBackup.Interfaces;
-
-namespace SongsBackup.Controllers
+﻿namespace SongsBackup.Controllers
 {
     using System.Net.Http.Headers;
     using System.Text;
     
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.WebUtilities;
     using Microsoft.AspNetCore.Mvc;
+        
+    using Newtonsoft.Json;
     
+    using SongsBackup.Interfaces;
     using SongsBackup.Models.SpotifyModels;
     
     [Route("auth")]
@@ -93,7 +91,7 @@ namespace SongsBackup.Controllers
 
                 var test = this.sessionService.GetSessionData();
 
-                return this.RedirectToAction("Landing", "AfterConnect");
+                return this.RedirectToAction("Index", "Landing");
             }
             catch (Exception ex)
             {
