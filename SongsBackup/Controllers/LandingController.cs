@@ -1,24 +1,18 @@
-﻿using SongsBackup.Interfaces;
-
-namespace SongsBackup.Controllers
+﻿namespace SongsBackup.Controllers
 {
+    using Interfaces;
+    
     using Microsoft.AspNetCore.Mvc;
 
-    using SongsBackup.Models.SpotifyModels;
-    using SongsBackup.ViewModel;
+    using Models.SpotifyModels;
 
-    public class LandingController : Controller
+    using ViewModel;
+
+    public class LandingController(ISpotifyService spotifyService) : Controller
     {
-        private readonly ISpotifyService spotifyService;
-
-        public LandingController(ISpotifyService spotifyService)
-        {
-            this.spotifyService = spotifyService;
-        }
-        
         public async Task<IActionResult> Index(HomeViewModel? viewModel)
         {
-            var profile = await this.spotifyService.GetProfile();
+            var profile = await spotifyService.GetProfile();
             return this.View(this.BuildViewModel(profile));
         }
         
@@ -29,19 +23,19 @@ namespace SongsBackup.Controllers
         
         private HomeViewModel BuildViewModel(ProfileResponse? profile)
         {
-            var profileImage = string.Empty;
+            string profileImage;
 
-            if (profile.Images.Length == 1)
+            if (profile is { Images.Length: 1 })
             {
                 profileImage = profile.Images[0].Url;
             }
             else
             {
-                var largest = profile.Images.AsQueryable()
+                var largest = profile?.Images.AsQueryable()
                     .OrderByDescending(_ => _.Width)
                     .ToArray();
 
-                profileImage = largest[0].Url;
+                profileImage = largest?[0].Url!;
             }
 
             return new()

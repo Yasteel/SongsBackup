@@ -25,6 +25,23 @@
           }
         }
       },
+      "Azure.Data.Tables/12.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.41.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Storage.Blobs/12.21.2": {
         "type": "package",
         "dependencies": {
@@ -1036,6 +1053,22 @@
         "lib/net6.0/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Data.Tables/12.9.0": {
+      "sha512": "oq3oSJQ9bCTfpBGs5EA+2mb0hjQIrRGeFukQFsV7VaTFzES48kWXD3yy5SpVp/jmdnh4ryhmyB4a1ABBCzATRg==",
+      "type": "package",
+      "path": "azure.data.tables/12.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.data.tables.12.9.0.nupkg.sha512",
+        "azure.data.tables.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Data.Tables.dll",
+        "lib/netstandard2.0/Azure.Data.Tables.xml"
       ]
     },
     "Azure.Storage.Blobs/12.21.2": {
@@ -2423,6 +2456,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Azure.Data.Tables >= 12.9.0",
       "Azure.Storage.Blobs >= 12.21.2",
       "Microsoft.AspNetCore.Authentication.OAuth >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 8.0.0",
@@ -2482,6 +2516,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Azure.Data.Tables": {
+            "target": "Package",
+            "version": "[12.9.0, )"
+          },
           "Azure.Storage.Blobs": {
             "target": "Package",
             "version": "[12.21.2, )"

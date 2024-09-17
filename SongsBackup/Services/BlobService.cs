@@ -2,28 +2,26 @@
 {
     using Azure.Storage.Blobs.Models;
     using Azure.Storage.Blobs;
-    using SongsBackup.Interfaces;
+    using Interfaces;
 
     public class BlobService : IBlobService
     {
-        private readonly IConfiguration configuration;
-        private readonly BlobServiceClient blobServiceClient;
-        private readonly string blobContainerName = "songs-backup";
-        
+        private readonly BlobServiceClient _blobServiceClient;
+        private const string BlobContainerName = "songs-backup";
+
         public BlobService(IConfiguration configuration)
         {
-            this.configuration = configuration;
-            var blobConnection = this.configuration.GetConnectionString("AzureBlobStorage");
+            var blobConnection = configuration.GetConnectionString("Azurite");
 
-            this.blobServiceClient = new (blobConnection);
+            _blobServiceClient = new (blobConnection);
         }
         
         public async Task<string> UploadFilesAsync(IFormFile file)
         {
-            var blobContainerClient = this.blobServiceClient.GetBlobContainerClient(this.blobContainerName);
+            var blobContainerClient = _blobServiceClient.GetBlobContainerClient(BlobContainerName);
             await blobContainerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
             var blobClient = blobContainerClient.GetBlobClient(file.FileName);
-            using (var stream = file.OpenReadStream())
+            await using (var stream = file.OpenReadStream())
             {
                 await blobClient.UploadAsync(stream, new BlobHttpHeaders { ContentType = file.ContentType });
             }

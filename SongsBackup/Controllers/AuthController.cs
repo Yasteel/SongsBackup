@@ -8,19 +8,19 @@
         
     using Newtonsoft.Json;
     
-    using SongsBackup.Interfaces;
-    using SongsBackup.Models.SpotifyModels;
+    using Interfaces;
+    using Models.SpotifyModels;
     
     [Route("auth")]
     public class AuthController : Controller
     {
-        private readonly IHttpClientFactory clientFactory;
-        private readonly ISessionService sessionService;
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly ISessionService _sessionService;
 
         public AuthController(IHttpClientFactory clientFactory, ISessionService sessionService)
         {
-            this.clientFactory = clientFactory;
-            this.sessionService = sessionService;
+            this._clientFactory = clientFactory;
+            this._sessionService = sessionService;
         }
         
         // GET
@@ -43,7 +43,7 @@
             };
             // Was in Request Parameters
 
-            var queryParams = new Uri(QueryHelpers.AddQueryString(SpotifyConstants.AuthEndpoint, reqParams));
+            var queryParams = new Uri(QueryHelpers.AddQueryString(SpotifyConstants.AuthEndpoint, reqParams!));
 
             return this.Redirect(queryParams.ToString());
         }
@@ -53,12 +53,7 @@
         {
             try
             {
-                if (state == null)
-                {
-                    return Redirect($"/#error=state_mismatch");
-                }
-
-                var client = this.clientFactory.CreateClient();
+                var client = this._clientFactory.CreateClient();
                 var clientId = SpotifyConstants.ClientId;
                 var clientSecret = SpotifyConstants.ClientSecret;
                 var redirectUri = "https://localhost:44372/auth/callback";
@@ -86,10 +81,10 @@
 
                 var tokenContent = await tokenResponse.Content.ReadAsStringAsync();
                 var token = JsonConvert.DeserializeObject<SpotifyTokenResponse>(tokenContent);
-                this.sessionService.SetSessionData(token);
+                if (token != null) this._sessionService.SetSessionData(token);
 
 
-                var test = this.sessionService.GetSessionData();
+                // var test = this._sessionService.GetSessionData();
 
                 return this.RedirectToAction("Index", "Landing");
             }

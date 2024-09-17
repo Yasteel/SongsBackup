@@ -18,6 +18,8 @@ namespace SongsBackup
             builder.Services.AddScoped<ISpotifyService, SpotifyService>();
             builder.Services.AddScoped<ISessionService, SessionService>();
             builder.Services.AddScoped<IBlobService, BlobService>();
+            builder.Services.AddScoped<ITableService, TableService>();
+            
             builder.Services.AddHttpContextAccessor();
             
             // allows for multipart form data with a limit of 100MB

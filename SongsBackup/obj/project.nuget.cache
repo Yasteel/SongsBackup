@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+NA0w8XBBwJBUqZp3xoEmNv7H6ETkeIk6VcpsmICDTkFgfsd2ffHLQKcftL5fBwSb8WDo8hjtZnXKDZjlSfL7A==",
+  "dgSpecHash": "teiQM2NCwRbSPtQcWfnTDQXQgQemB8Cr+EunjWkLyWtWAy8G4tsmOrQLgRsaKfhl/alHpNZNyjDxanym3bCn4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\yasteelg\\source\\repos\\Personal\\SongsBackup\\SongsBackup\\SongsBackup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yasteelg\\.nuget\\packages\\azure.core\\1.41.0\\azure.core.1.41.0.nupkg.sha512",
+    "C:\\Users\\yasteelg\\.nuget\\packages\\azure.data.tables\\12.9.0\\azure.data.tables.12.9.0.nupkg.sha512",
     "C:\\Users\\yasteelg\\.nuget\\packages\\azure.storage.blobs\\12.21.2\\azure.storage.blobs.12.21.2.nupkg.sha512",
     "C:\\Users\\yasteelg\\.nuget\\packages\\azure.storage.common\\12.20.1\\azure.storage.common.12.20.1.nupkg.sha512",
     "C:\\Users\\yasteelg\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
